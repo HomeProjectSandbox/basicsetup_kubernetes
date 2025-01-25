@@ -1,2 +1,2 @@
 # basicsetup_kubernetes
-basic kubernetes setup
+basicsetup_kubernetes (kind)
