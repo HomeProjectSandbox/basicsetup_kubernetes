@@ -1,0 +1,41 @@
+prometheus:
+  server:
+  extraArgs:
+    storage.local.retention: 720h
+    global:
+      scrape_interval: 15s
+  serverFiles:
+    prometheus.yml:
+      scrape_configs:
+        - job_name: prometheus
+          static_configs:
+            - targets:
+              - localhost:9090
+        - job_name: myapp
+          static_configs:
+            - targets:
+              - webappexample.app.svc.cluster.local:80
+    
+  alertmanager:
+    enabled: false
+  kube-state-metrics:
+    enabled: true
+  prometheus-node-exporter:
+    enabled: true
+  prometheus-pushgateway:
+    enabled: false
+grafana:
+  enabled: true
+  adminPassword: "admin"  # Secure this in production environments
+  sidecar:
+    dashboards:
+      enabled: true
+      label: grafana_dashboard
+  datasources:
+    datasources.yaml:
+      apiVersion: 1
+      datasources:
+        - name: Prometheus
+          type: prometheus
+          url: "http://prometheus-server:80"  # Assuming Prometheus service URL
+          isDefault: true
