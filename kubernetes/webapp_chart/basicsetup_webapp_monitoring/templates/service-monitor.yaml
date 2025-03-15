@@ -1,0 +1,18 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: webappexample-monitor
+  namespace: monitoring  # This must match your Prometheus installation namespace
+  labels:
+    release: monitor  # Ensure this matches your Prometheus Operator selector
+spec:
+  selector:
+    matchLabels:
+      app: webappexample  # This must match your service's label
+  namespaceSelector:
+    matchNames:
+      - app  # Allows monitoring services in the "app" namespace
+  endpoints:
+    - port: http  # Matches the Service port name
+      path: /metrics
+      interval: 15s  # Scrape interval
