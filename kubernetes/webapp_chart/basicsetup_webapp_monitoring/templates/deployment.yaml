@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: webappexample
+  namespace: {{ .Release.Namespace }}
   labels:
     app: webappexample
 spec:

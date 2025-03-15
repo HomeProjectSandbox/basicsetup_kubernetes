@@ -25,3 +25,4 @@ helm list --namespace <namespace>
 kubectl get all --namespace <namespace>
 ```
 
+from the root -> call `make create_cluster` (to delete -> `make delete_cluster`)

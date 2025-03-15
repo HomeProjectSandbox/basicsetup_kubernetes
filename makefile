@@ -17,3 +17,11 @@ delete_cluster:
 install_app:
 	helm install myapp kubernetes/webapp_chart/basicsetup_webapp_monitoring --namespace app --create-namespace
 
+install_kubeprometheusstack:
+	helm install monitor kubernetes/monitoring_prometheusStack/monitoringPrometheusStack --namespace monitoring --create-namespace
+
+uninstall:
+	helm uninstall myapp -n app
+	helm uninstall monitor -n monitoring
+	k delete ns monitoring
+	k delete ns app
