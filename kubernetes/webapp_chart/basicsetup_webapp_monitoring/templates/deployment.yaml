@@ -19,5 +19,6 @@ spec:
       - name: webapp
         #image: tamasujvari/basicsetup_basicwebserver:arm
         image: tamasujvari/basicsetup_basicwebserver:amd
+        imagePullPolicy: Always
         ports:
         - containerPort: 3333
