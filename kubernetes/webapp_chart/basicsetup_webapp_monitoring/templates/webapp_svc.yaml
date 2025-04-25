@@ -7,10 +7,11 @@ metadata:
 spec:
   selector:
     app: webappexample
-  type: NodePort
+  #type: NodePort
+  type: ClusterIP
   ports:  
   - name: http
     port: 80
     targetPort: 3333
-    nodePort: 30000
+    #nodePort: 30000
     protocol: TCP

@@ -17,6 +17,7 @@ spec:
     spec:
       containers:
       - name: webapp
-        image: tamasujvari/basicsetup_basicwebserver:arm
+        #image: tamasujvari/basicsetup_basicwebserver:arm
+        image: tamasujvari/basicsetup_basicwebserver:amd
         ports:
         - containerPort: 3333
