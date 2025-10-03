@@ -1,5 +1,7 @@
 #Testing kube-prometheus-stack
 
+first (setup kubeconfig and kubectl!!!)
+
 [ref](https://github.com/prometheus-community/helm-charts/tree/main/charts/kube-prometheus-stack)  
 kube-prometheus-stack will install additional dep charts (prometheus + grafana)
 
@@ -38,7 +40,7 @@ helm create monitoring
 
 testing:
 ```
-kubectl port-forward svc/prometheus-operated 9090:9090 -n monitoring
+kubectl port-forward svc/monitor-kube-prometheus-st-prometheus 9090:9090 -n monitoring
 
 k port-forward svc/monitor-grafana 3000:80 -n monitoring
 

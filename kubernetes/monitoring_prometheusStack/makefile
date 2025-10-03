@@ -3,9 +3,8 @@ install:
 	helm repo update
 
 install_mychart:
-	cd monitoringPrometheusStack
-	helm dependency build
-	helm install monitor . --namespace monitoring --create-namespace
+	cd monitoringPrometheusStack && helm dependency build
+	cd monitoringPrometheusStack && helm install monitor . --namespace monitoring --create-namespace
 
 uninstall_mychart:
-	helm uninstall monitor
+	cd monitoringPrometheusStack && helm uninstall monitor
