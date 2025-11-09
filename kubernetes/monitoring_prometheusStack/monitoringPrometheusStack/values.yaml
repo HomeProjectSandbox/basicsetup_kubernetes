@@ -1,4 +1,4 @@
-kube-prometheus-stack
+kube-prometheus-stack:
   grafana:
     service:
       type: NodePort
