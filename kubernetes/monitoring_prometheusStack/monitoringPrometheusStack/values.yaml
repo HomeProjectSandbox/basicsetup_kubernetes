@@ -2,6 +2,8 @@ kube-prometheus-stack:
   grafana:
     service:
       type: NodePort
+      nodePort: 32000
   prometheus:
     service:
       type: NodePort
+      nodePort: 32001
