@@ -8,4 +8,4 @@ install_mychart:
 	cd monitoringPrometheusStack && helm install monitor . --namespace monitoring --create-namespace
 
 uninstall_mychart:
-	cd monitoringPrometheusStack && helm uninstall monitor
+	cd monitoringPrometheusStack && helm uninstall monitor -n monitoring
