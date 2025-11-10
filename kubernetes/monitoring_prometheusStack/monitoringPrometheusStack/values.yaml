@@ -10,6 +10,8 @@ kube-prometheus-stack:
     service:
       type: NodePort
       nodePort: 32001
-  prometheusSpec:
-    podMonitorSelectorNilUsesHelmValues: false
-    serviceMonitorSelectorNilUsesHelmValues: false
+    prometheusSpec:
+      podMonitorSelectorNilUsesHelmValues: false
+      probeSelectorNilUsesHelmValues: false
+      ruleSelectorNilUsesHelmValues: false
+      serviceMonitorSelectorNilUsesHelmValues: false
