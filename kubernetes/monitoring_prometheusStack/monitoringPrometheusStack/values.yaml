@@ -3,6 +3,9 @@ kube-prometheus-stack:
     service:
       type: NodePort
       nodePort: 32000
+    sidecar:
+      dashboards:
+        enabled: true
   prometheus:
     service:
       type: NodePort
