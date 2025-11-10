@@ -1,0 +1,15 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: rp4-temperature-servicemonitor
+  namespace: {{ Release.Namespace }}
+  labels:
+    release: kube-prometheus-stack
+spec:
+  endpoints:
+    - port: http
+      path: /metrics
+      interval: 15s
+  selector:
+    matchLabels:
+      app: rpi4-temperature
