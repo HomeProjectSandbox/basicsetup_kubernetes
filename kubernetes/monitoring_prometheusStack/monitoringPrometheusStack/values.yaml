@@ -15,3 +15,5 @@ kube-prometheus-stack:
       probeSelectorNilUsesHelmValues: false
       ruleSelectorNilUsesHelmValues: false
       serviceMonitorSelectorNilUsesHelmValues: false
+      serviceMonitorSelector: {}
+      serviceMonitorNamespaceSelector: {}
