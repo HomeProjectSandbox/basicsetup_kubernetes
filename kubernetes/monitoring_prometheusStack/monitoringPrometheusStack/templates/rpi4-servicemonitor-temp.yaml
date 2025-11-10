@@ -5,6 +5,7 @@ metadata:
   namespace: {{ .Release.Namespace }}
   labels:
     release: kube-prometheus-stack
+    app.kubernetes.io/instance: {{ .Release.Name }}
 spec:
   endpoints:
     - port: http
