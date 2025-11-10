@@ -8,6 +8,7 @@ metadata:
     # You should set the "kubernetes.io/service-name" label.
     # Set its value to match the name of the Service
     kubernetes.io/service-name: rpi4-service-temp
+    app: rpi4-temperature           # match ServiceMonitor selector
 addressType: IPv4
 ports:
   - name: http # should match with the name of the service port defined above
@@ -17,3 +18,5 @@ ports:
 endpoints:
   - addresses:
       - "192.168.1.100"
+    conditions:
+      ready: true                   # ✅ required

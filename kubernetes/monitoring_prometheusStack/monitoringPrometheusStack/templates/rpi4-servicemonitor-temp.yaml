@@ -13,3 +13,6 @@ spec:
   selector:
     matchLabels:
       app: rpi4-temperature
+  namespaceSelector:
+    matchNames:
+        - {{ .Release.Namespace }}   # makes discovery explicit
