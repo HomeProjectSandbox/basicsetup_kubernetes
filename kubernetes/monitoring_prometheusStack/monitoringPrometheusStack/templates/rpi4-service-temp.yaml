@@ -6,7 +6,7 @@ metadata:
   labels:
     app: rpi4-temperature
 spec:
-  clusterIP: None
+  clusterIP: None   #most relevant setting -> https://github.com/k3s-io/k3s/discussions/9726
   ports:
     - name: http
       protocol: TCP
