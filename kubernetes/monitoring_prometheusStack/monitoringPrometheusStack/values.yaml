@@ -20,3 +20,6 @@ kube-prometheus-stack:
 
       retention: 15d
       retentionSize: "50GiB"
+  
+  prometheusOperator:
+    kubeletEndpointSliceEnabled: true
