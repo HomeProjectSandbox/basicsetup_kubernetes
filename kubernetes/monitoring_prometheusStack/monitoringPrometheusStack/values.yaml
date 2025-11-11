@@ -17,3 +17,6 @@ kube-prometheus-stack:
       serviceMonitorSelectorNilUsesHelmValues: false
       serviceMonitorSelector: {}
       serviceMonitorNamespaceSelector: {}
+
+      retention: 15d
+      retentionSize: "50GiB"
