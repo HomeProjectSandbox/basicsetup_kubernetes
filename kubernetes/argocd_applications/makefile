@@ -1,2 +1,2 @@
 install:
-	kubectl apply -f apps
+	sudo kubectl apply -f apps
