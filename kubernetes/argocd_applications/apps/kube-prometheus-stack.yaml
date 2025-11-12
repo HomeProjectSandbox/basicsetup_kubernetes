@@ -3,7 +3,7 @@ kind: Application
 metadata:
   creationTimestamp: "2025-11-12T11:46:47Z"
   generation: 120
-  name: my-kube_prometheus_stack
+  name: my-kube-prometheus-stack
   namespace: argocd
 spec:
   destination:
