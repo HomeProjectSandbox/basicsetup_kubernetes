@@ -1,0 +1,29 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  creationTimestamp: "2025-11-12T11:46:47Z"
+  generation: 120
+  name: my-kube_prometheus_stack
+  namespace: argocd
+spec:
+  destination:
+    namespace: monitoring
+    server: https://kubernetes.default.svc
+  project: default
+  sources:
+  - ref: valuesrepo
+    repoURL: https://github.com/HomeProjectSandbox/basicsetup_kubernetes_config.git
+    targetRevision: main
+  - helm:
+      valueFiles:
+      - $valuesrepo/argoenv/monitoring_kube_prometheus_stack/values.yaml
+    path: kubernetes/monitoring_prometheusStack/monitoringPrometheusStack
+    repoURL: https://github.com/HomeProjectSandbox/basicsetup_kubernetes.git
+    targetRevision: HEAD
+  syncPolicy:
+    automated:
+      enabled: true
+      selfHeal: true
+    syncOptions:
+    - CreateNamespace=true
+    - ServerSideApply=true
