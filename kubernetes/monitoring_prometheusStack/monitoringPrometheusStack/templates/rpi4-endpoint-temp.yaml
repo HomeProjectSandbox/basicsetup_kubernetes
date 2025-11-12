@@ -1,7 +1,7 @@
 apiVersion: discovery.k8s.io/v1
 kind: EndpointSlice
 metadata:
-  name: rpi4-service-temp-1 # by convention, use the name of the Service
+  name: rpi4-service-temp # by convention, use the name of the Service
                      # as a prefix for the name of the EndpointSlice
   namespace: {{ .Release.Namespace }}
   labels:
