@@ -9,6 +9,7 @@
 #    # Set its value to match the name of the Service
 #    kubernetes.io/service-name: rpi4-service-temp
 #    app: rpi4-temperature           # match ServiceMonitor selector
+#    kubernetes.io/managed-by: manual  # Important for manual EndpointSlices
 #addressType: IPv4
 #ports:
 #  - name: http # should match with the name of the service port defined above
