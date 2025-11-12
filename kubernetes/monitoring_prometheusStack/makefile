@@ -9,6 +9,3 @@ install_mychart:
 
 uninstall_mychart:
 	cd monitoringPrometheusStack && helm uninstall monitor -n monitoring
-
-install_endpointslice:
-	sudo k apply -f monitoringPrometheusStack/templates/rpi4-endpoint-temp.yaml

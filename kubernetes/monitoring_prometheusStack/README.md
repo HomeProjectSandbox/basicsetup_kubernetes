@@ -50,3 +50,6 @@ k get secrets -n monitoring monitor-grafana -o yaml
 ```
 
 konfigure service monitor: https://www.stackgenie.io/service-monitoring-using-prometheus-with-kube-prometheus-stack/
+
+
+ENDPOINTSLICE need be applied manually!!!
