@@ -26,7 +26,7 @@ apiVersion: v1
 kind: Endpoints
 metadata:
   name: rpi4-service-temp  # Must match Service name exactly
-  namespace: {{ .Release.Namespace }}
+  namespace: monitoring
 subsets:
   - addresses:
       - ip: "192.168.1.100"
