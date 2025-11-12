@@ -1,19 +1,19 @@
-apiVersion: monitoring.coreos.com/v1
-kind: ServiceMonitor
-metadata:
-  name: rp4-temperature-servicemonitor
-  namespace: {{ .Release.Namespace }}
-  labels:
-    release: kube-prometheus-stack
-    app.kubernetes.io/instance: {{ .Release.Name }}
-spec:
-  endpoints:
-    - port: http
-      path: /metrics
-      interval: 15s
-  selector:
-    matchLabels:
-      app: rpi4-temperature
-  namespaceSelector:
-    matchNames:
-        - {{ .Release.Namespace }}   # makes discovery explicit
+#apiVersion: monitoring.coreos.com/v1
+#kind: ServiceMonitor
+#metadata:
+#  name: rp4-temperature-servicemonitor
+#  namespace: {{ .Release.Namespace }}
+#  labels:
+#    release: kube-prometheus-stack
+#    app.kubernetes.io/instance: {{ .Release.Name }}
+#spec:
+#  endpoints:
+#    - port: http
+#      path: /metrics
+#      interval: 15s
+#  selector:
+#    matchLabels:
+#      app: rpi4-temperature
+#  namespaceSelector:
+#    matchNames:
+#        - {{ .Release.Namespace }}   # makes discovery explicit

@@ -1,17 +1,17 @@
-apiVersion: v1
-kind: Service
-metadata:
-  name: rpi4-service-temp
-  namespace: {{ .Release.Namespace }}
-  labels:
-    app: rpi4-temperature
-  annotations:
-    prometheus.io/scrape: "true"
-    prometheus.io/port: "9101"
-spec:
-  clusterIP: None   #most relevant setting -> https://github.com/k3s-io/k3s/discussions/9726
-  ports:
-    - name: http
-      protocol: TCP
-      port: 9101
-      targetPort: 9101
+#apiVersion: v1
+#kind: Service
+#metadata:
+#  name: rpi4-service-temp
+#  namespace: {{ .Release.Namespace }}
+#  labels:
+#    app: rpi4-temperature
+#  annotations:
+#    prometheus.io/scrape: "true"
+#    prometheus.io/port: "9101"
+#spec:
+#  clusterIP: None   #most relevant setting -> https://github.com/k3s-io/k3s/discussions/9726
+#  ports:
+#    - name: http
+#      protocol: TCP
+#      port: 9101
+#      targetPort: 9101

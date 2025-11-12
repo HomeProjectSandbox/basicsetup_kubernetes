@@ -20,3 +20,9 @@ kube-prometheus-stack:
 
       retention: 15d
       retentionSize: "50GiB"
+
+      additionalScrapeConfigs: |
+        - job_name: 'rpi4-temperature'
+          scheme: http
+          static_configs:
+            - targets: ['192.168.1.100:9101']
