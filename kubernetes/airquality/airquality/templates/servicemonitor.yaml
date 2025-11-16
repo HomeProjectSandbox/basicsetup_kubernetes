@@ -13,6 +13,6 @@ spec:
     matchNames:
       - {{ .Release.Namespace }}  # Allows monitoring services in the "app" namespace
   endpoints:
-    - port: {{ .Values.service.servicePort }}  # Matches the Service port name
+    - port: http # Matches the Service port name
       path: /metrics
       interval: 3600s  # Scrape interval
