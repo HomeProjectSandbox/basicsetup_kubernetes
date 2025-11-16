@@ -15,4 +15,4 @@ spec:
   endpoints:
     - port: http # Matches the Service port name
       path: /metrics
-      interval: 3600s  # Scrape interval
+      interval: 30s  # Scrape interval
