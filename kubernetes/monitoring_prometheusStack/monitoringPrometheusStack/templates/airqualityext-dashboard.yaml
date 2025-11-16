@@ -27,7 +27,7 @@ data:
     "editable": true,
     "fiscalYearStartMonth": 0,
     "graphTooltip": 0,
-    "id": 30,
+    "id": 0,
     "links": [],
     "panels": [
         {
@@ -543,7 +543,7 @@ data:
     },
     "timepicker": {},
     "timezone": "browser",
-    "title": "New dashboard",
+    "title": "Air quality external",
     "uid": "ad5jq58",
-    "version": 1
+    "version": 2
     }
