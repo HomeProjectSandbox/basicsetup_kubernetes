@@ -1,0 +1,31 @@
+appNamespace: airquality
+replicaCount: 1
+
+
+image:
+  repository: tamasujvari/airquality_ext
+  tag: latest
+  pullPolicy: Always
+
+service:
+  containerPort: 8000
+  servicePort: 8080
+  type: ClusterIP
+
+config:
+  configmapName: airqualityext
+  appconfig:
+    cities:
+      budapest:
+        country: Hungary
+      vienna:
+        country: Austria
+      prague:
+        country: Czech Republic
+      berlin:
+        country: Germany
+    config:
+      measure_interval: 3600 #measure time in second
+
+secret:
+  token: <your api token> #https://aqicn.org/api/

@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ .Values.config.configmapName }}
+  namespace: {{ .Release.Namespace }}
+data:
+  appconfig.yaml: |
+{{- toYaml .Values.config.appconfig  | nindent 4 }}

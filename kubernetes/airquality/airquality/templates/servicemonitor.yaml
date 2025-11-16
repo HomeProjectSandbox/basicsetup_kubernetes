@@ -1,0 +1,18 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: {{ .Release.Name }}-monitor
+  namespace: monitoring
+  labels:
+    release: monitor
+spec:
+  selector:
+    matchLabels:
+      {{- include "airquality.labels" . | nindent 6 }}
+  namespaceSelector:
+    matchNames:
+      - {{ .Release.Namespace }}  # Allows monitoring services in the "app" namespace
+  endpoints:
+    - port: {{ .Values.service.servicePort }}  # Matches the Service port name
+      path: /metrics
+      interval: 3600s  # Scrape interval
