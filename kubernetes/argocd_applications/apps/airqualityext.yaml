@@ -1,11 +1,11 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: my-kube-prometheus-stack
+  name: airquality
   namespace: argocd
 spec:
   destination:
-    namespace: monitoring
+    namespace: airquality
     server: https://kubernetes.default.svc
   project: default
   sources:
@@ -14,8 +14,8 @@ spec:
     targetRevision: main
   - helm:
       valueFiles:
-      - $valuesrepo/argoenv/monitoring_kube_prometheus_stack/values.yaml
-    path: kubernetes/monitoring_prometheusStack/monitoringPrometheusStack
+      - $valuesrepo/argoenv/airquality/values.yaml
+    path: kubernetes/airquality/airquality
     repoURL: https://github.com/HomeProjectSandbox/basicsetup_kubernetes.git
     targetRevision: HEAD
   syncPolicy:

@@ -27,5 +27,5 @@ config:
     config:
       measure_interval: 3600 #measure time in second
 
-secret:
+externalApi:
   token: <your api token> #https://aqicn.org/api/
