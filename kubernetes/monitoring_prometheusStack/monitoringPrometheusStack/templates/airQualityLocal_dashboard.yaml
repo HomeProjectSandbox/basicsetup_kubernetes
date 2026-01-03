@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: tempandhumid-grafana-dashboard
+  name: airquality-home-grafana-dashboard
   namespace: {{ .Release.Namespace }}
   labels:
     grafana_dashboard: "1"
