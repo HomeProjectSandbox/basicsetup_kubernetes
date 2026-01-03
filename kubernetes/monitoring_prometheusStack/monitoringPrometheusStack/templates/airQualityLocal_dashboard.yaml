@@ -1,0 +1,388 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: tempandhumid-grafana-dashboard
+  namespace: {{ .Release.Namespace }}
+  labels:
+    grafana_dashboard: "1"
+data:
+  k8s-dashboard.json: |-
+    {
+    "annotations": {
+        "list": [
+        {
+            "builtIn": 1,
+            "datasource": {
+            "type": "grafana",
+            "uid": "-- Grafana --"
+            },
+            "enable": true,
+            "hide": true,
+            "iconColor": "rgba(0, 211, 255, 1)",
+            "name": "Annotations & Alerts",
+            "type": "dashboard"
+        }
+        ]
+    },
+    "editable": true,
+    "fiscalYearStartMonth": 0,
+    "graphTooltip": 0,
+    "id": 31,
+    "links": [],
+    "panels": [
+        {
+        "datasource": {
+            "type": "prometheus",
+            "uid": "prometheus"
+        },
+        "description": "2.5μm (local) ",
+        "fieldConfig": {
+            "defaults": {
+            "color": {
+                "mode": "palette-classic"
+            },
+            "custom": {
+                "axisBorderShow": false,
+                "axisCenteredZero": false,
+                "axisColorMode": "text",
+                "axisLabel": "",
+                "axisPlacement": "auto",
+                "barAlignment": 0,
+                "barWidthFactor": 0.6,
+                "drawStyle": "line",
+                "fillOpacity": 83,
+                "gradientMode": "none",
+                "hideFrom": {
+                "legend": false,
+                "tooltip": false,
+                "viz": false
+                },
+                "insertNulls": false,
+                "lineInterpolation": "linear",
+                "lineWidth": 1,
+                "pointSize": 5,
+                "scaleDistribution": {
+                "type": "linear"
+                },
+                "showPoints": "auto",
+                "showValues": false,
+                "spanNulls": false,
+                "stacking": {
+                "group": "A",
+                "mode": "none"
+                },
+                "thresholdsStyle": {
+                "mode": "off"
+                }
+            },
+            "mappings": [],
+            "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                {
+                    "color": "green",
+                    "value": 0
+                }
+                ]
+            }
+            },
+            "overrides": []
+        },
+        "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 0,
+            "y": 0
+        },
+        "id": 3,
+        "options": {
+            "legend": {
+            "calcs": [],
+            "displayMode": "list",
+            "placement": "bottom",
+            "showLegend": true
+            },
+            "tooltip": {
+            "hideZeros": false,
+            "mode": "single",
+            "sort": "none"
+            }
+        },
+        "pluginVersion": "12.2.1",
+        "targets": [
+            {
+            "editorMode": "builder",
+            "expr": "sds011_airquality_pm25",
+            "legendFormat": "__auto",
+            "range": true,
+            "refId": "A"
+            }
+        ],
+        "title": "PM2.5",
+        "type": "timeseries"
+        },
+        {
+        "datasource": {
+            "type": "prometheus",
+            "uid": "prometheus"
+        },
+        "description": "2.5μm",
+        "fieldConfig": {
+            "defaults": {
+            "color": {
+                "mode": "thresholds"
+            },
+            "mappings": [],
+            "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                {
+                    "color": "green",
+                    "value": 0
+                },
+                {
+                    "color": "super-light-yellow",
+                    "value": 12
+                },
+                {
+                    "color": "#EAB839",
+                    "value": 35
+                },
+                {
+                    "color": "dark-red",
+                    "value": 55
+                }
+                ]
+            }
+            },
+            "overrides": []
+        },
+        "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 12,
+            "y": 0
+        },
+        "id": 4,
+        "options": {
+            "minVizHeight": 75,
+            "minVizWidth": 75,
+            "orientation": "auto",
+            "reduceOptions": {
+            "calcs": [
+                "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+            },
+            "showThresholdLabels": false,
+            "showThresholdMarkers": true,
+            "sizing": "auto"
+        },
+        "pluginVersion": "12.2.1",
+        "targets": [
+            {
+            "editorMode": "builder",
+            "expr": "sds011_airquality_pm25",
+            "legendFormat": "__auto",
+            "range": true,
+            "refId": "A"
+            }
+        ],
+        "title": "Pm2.5 current value (local)",
+        "type": "gauge"
+        },
+        {
+        "datasource": {
+            "type": "prometheus",
+            "uid": "prometheus"
+        },
+        "description": "10 (μm) ",
+        "fieldConfig": {
+            "defaults": {
+            "color": {
+                "mode": "palette-classic"
+            },
+            "custom": {
+                "axisBorderShow": false,
+                "axisCenteredZero": false,
+                "axisColorMode": "text",
+                "axisLabel": "",
+                "axisPlacement": "auto",
+                "barAlignment": 0,
+                "barWidthFactor": 0.6,
+                "drawStyle": "line",
+                "fillOpacity": 68,
+                "gradientMode": "none",
+                "hideFrom": {
+                "legend": false,
+                "tooltip": false,
+                "viz": false
+                },
+                "insertNulls": false,
+                "lineInterpolation": "linear",
+                "lineStyle": {
+                "fill": "solid"
+                },
+                "lineWidth": 2,
+                "pointSize": 5,
+                "scaleDistribution": {
+                "type": "linear"
+                },
+                "showPoints": "auto",
+                "showValues": false,
+                "spanNulls": false,
+                "stacking": {
+                "group": "A",
+                "mode": "none"
+                },
+                "thresholdsStyle": {
+                "mode": "off"
+                }
+            },
+            "mappings": [],
+            "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                {
+                    "color": "green",
+                    "value": 0
+                },
+                {
+                    "color": "red",
+                    "value": 80
+                }
+                ]
+            }
+            },
+            "overrides": []
+        },
+        "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 0,
+            "y": 8
+        },
+        "id": 1,
+        "options": {
+            "legend": {
+            "calcs": [],
+            "displayMode": "list",
+            "placement": "bottom",
+            "showLegend": true
+            },
+            "tooltip": {
+            "hideZeros": false,
+            "mode": "single",
+            "sort": "none"
+            }
+        },
+        "pluginVersion": "12.2.1",
+        "targets": [
+            {
+            "datasource": {
+                "type": "prometheus",
+                "uid": "prometheus"
+            },
+            "editorMode": "builder",
+            "expr": "sds011_airquality_pm10",
+            "legendFormat": "__auto",
+            "range": true,
+            "refId": "A"
+            }
+        ],
+        "title": "PM10 local",
+        "type": "timeseries"
+        },
+        {
+        "datasource": {
+            "type": "prometheus",
+            "uid": "prometheus"
+        },
+        "description": "10 μm (current value",
+        "fieldConfig": {
+            "defaults": {
+            "color": {
+                "mode": "thresholds"
+            },
+            "mappings": [],
+            "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                {
+                    "color": "green",
+                    "value": 0
+                },
+                {
+                    "color": "super-light-yellow",
+                    "value": 50
+                },
+                {
+                    "color": "yellow",
+                    "value": 100
+                },
+                {
+                    "color": "orange",
+                    "value": 250
+                },
+                {
+                    "color": "dark-red",
+                    "value": 350
+                }
+                ]
+            }
+            },
+            "overrides": []
+        },
+        "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 12,
+            "y": 8
+        },
+        "id": 2,
+        "options": {
+            "minVizHeight": 75,
+            "minVizWidth": 75,
+            "orientation": "auto",
+            "reduceOptions": {
+            "calcs": [
+                "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+            },
+            "showThresholdLabels": false,
+            "showThresholdMarkers": true,
+            "sizing": "auto"
+        },
+        "pluginVersion": "12.2.1",
+        "targets": [
+            {
+            "editorMode": "builder",
+            "expr": "sds011_airquality_pm10",
+            "legendFormat": "__auto",
+            "range": true,
+            "refId": "A"
+            }
+        ],
+        "title": "Pm10",
+        "type": "gauge"
+        }
+    ],
+    "preload": false,
+    "schemaVersion": 42,
+    "tags": [],
+    "templating": {
+        "list": []
+    },
+    "time": {
+        "from": "now-30m",
+        "to": "now"
+    },
+    "timepicker": {},
+    "timezone": "browser",
+    "title": "Local air quality (home)",
+    "uid": "ad5xjdn",
+    "version": 1
+    }
